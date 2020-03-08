@@ -1,0 +1,57 @@
+.gatsby-highlight pre[class*="language-"]::before {
+  border-radius: 0 0 0.25rem 0.25rem;
+  font-size: 15px;
+  letter-spacing: 0.025rem;
+  padding: 0.1rem 0.5rem;
+  position: absolute;
+  text-align: right;
+  text-transform: uppercase;
+  margin-top: -30px;
+}
+
+.gatsby-highlight pre[class*="language-js"].line-numbers::before {
+  content: "js";
+  background: #f7df1e;
+  color: black;
+}
+
+.gatsby-highlight pre[class*="language-css"].line-numbers::before {
+  content: "css";
+  background: #f7df1e;
+  color: black;
+}
+
+.gatsby-highlight pre[class*="language-java"].line-numbers::before {
+  content: "java";
+  background: #f7df1e;
+  color: black;
+}
+.gatsby-highlight pre[class*="language-bash"].line-numbers::before {
+  content: "bash";
+  background: #f7df1e;
+  color: black;
+}
+.gatsby-highlight pre[class*="language-html"].line-numbers::before {
+  content: "html";
+  background: #f7df1e;
+  color: black;
+}
+
+.gatsby-highlight pre[class*="language-typescript"].line-numbers::before {
+  content: "typescript";
+  background: #f7df1e;
+  color: black;
+}
+
+.gatsby-highlight {
+  background-color: #282936;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding: 0;
+  padding-left: 2.8em;
+  overflow: initial;
+}
