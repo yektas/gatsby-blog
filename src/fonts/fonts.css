@@ -1,0 +1,17 @@
+@font-face {
+  font-family: Hack;
+  font-weight: 400;
+  font-style: normal;
+  src: url("hack-regular.woff2") format("woff2"),
+    url("hack-regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Hack;
+  font-weight: 700;
+  font-style: normal;
+  src: url("hack-bold.woff2") format("woff2"),
+    url("hack-bold.woff") format("woff");
+  font-display: swap;
+}

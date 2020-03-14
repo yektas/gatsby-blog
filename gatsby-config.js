@@ -27,10 +27,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/fonts/`,
-        name: `fonts`,
+        path: `${__dirname}/src/fonts`,
+        name: "fonts",
       },
     },
     {

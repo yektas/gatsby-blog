@@ -1,3 +1,10 @@
+/* In your CSS */
+:root {
+  --color-primary: #ffffff;
+  --color-secondary: #556bcf;
+  /* ... */
+}
+
 @tailwind base;
 
 @tailwind components;
@@ -5,5 +12,5 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css?family=Fira+Mono|Inter&display=swap");
-
 @import "prism.css";
+@import "../fonts/fonts.css";

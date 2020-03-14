@@ -1,7 +1,17 @@
 module.exports = {
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "radical-red": "#f73859",
+      },
+    },
+    inset: {
+      "16": "4rem",
+    },
   },
-  variants: {},
+  variants: {
+    backgroundColor: ["responsive", "hover", "focus", "active"],
+    fontSize: ["responsive", "hover"],
+  },
   plugins: [],
 }

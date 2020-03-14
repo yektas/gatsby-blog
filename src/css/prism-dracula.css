@@ -37,7 +37,7 @@ pre[class*="language-"] {
   color: #ccc;
   background: rgb(40, 41, 54);
   text-shadow: none;
-  font-family: "Fira Mono";
+  font-family: "Hack", "Fira Code", monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -318,7 +318,8 @@ pre.line-numbers > code {
   top: 0;
   font-size: 100%;
   left: -3.8em;
-  width: 3em; /* works for line-numbers below 1000 lines */
+  width: 3em;
+  /* works for line-numbers below 1000 lines */
   letter-spacing: -1px;
   border-right: 1px solid #999;
 
@@ -375,7 +376,8 @@ div.code-toolbar > .toolbar button {
   line-height: normal;
   overflow: visible;
   padding: 0;
-  -webkit-user-select: none; /* for button */
+  -webkit-user-select: none;
+  /* for button */
   -moz-user-select: none;
   -ms-user-select: none;
 }
