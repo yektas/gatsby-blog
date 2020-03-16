@@ -3,6 +3,7 @@ import Navbar from "./navbar"
 import { rhythm } from "../utils/typography"
 import "../css/global.css"
 import PostLayout from "./post-layout"
+import Footer from "./footer"
 
 const Layout = ({ location, title, children }) => {
   return (
@@ -12,11 +13,7 @@ const Layout = ({ location, title, children }) => {
         <main>
           <PostLayout>{children}</PostLayout>
         </main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Footer />
       </div>
     </div>
   )

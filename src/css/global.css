@@ -14,3 +14,8 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Mono|Inter&display=swap");
 @import "prism.css";
 @import "../fonts/fonts.css";
+@import "markdown.css";
+
+article > header > h3 {
+  @apply text-blue-600 font-medium;
+}

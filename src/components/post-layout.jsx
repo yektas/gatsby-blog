@@ -11,7 +11,10 @@ const PostLayout = ({ children }) => {
           <div id="app" class="flex">
             <div class="pt-24 pb-16 lg:pt-28 w-full">
               <div class="flex">
-                <div class=" markdown px-6 xl:px-12 w-full max-w-3xl mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <div
+                  id="markdown"
+                  class="markdown px-6 xl:px-12 w-full max-w-3xl mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4"
+                >
                   {children}
                 </div>
 

@@ -3,6 +3,9 @@ import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
+import HomeLayout from "../components/home-layout"
+import PostCard from "../components/post-card"
+import SectionTitle from "../components/common/section-title"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
@@ -10,40 +13,35 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMdx.edges
 
+  const rightMenu = () => {
+    return (
+      <ul>
+        <li>DENEME</li>
+        <li>DENEME1</li>
+        <li>DENEME2</li>
+        <li>DENEME3</li>
+        <li>DENEME4</li>
+      </ul>
+    )
+  }
+
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <div class="shadow-md mb-10 p-5">
-            <article key={node.fields.slug}>
-              <header>
-                <h3
-                  class="text-green-500 font-bold text-2xl"
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <small class="text-gray-600">{node.frontmatter.date}</small>
-              </header>
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </section>
-            </article>
-          </div>
-        )
-      })}
-    </Layout>
+    <HomeLayout rightMenu={rightMenu()} rightMenuSticky={false}>
+      {/* <SEO title="All posts" /> */}
+      {/* <Bio /> */}
+      <SectionTitle>Latest Posts</SectionTitle>
+      <div className="mt-5">
+        {posts.map(({ node }) => (
+          <PostCard node={node} />
+        ))}
+        {posts.map(({ node }) => (
+          <PostCard node={node} />
+        ))}
+        {posts.map(({ node }) => (
+          <PostCard node={node} />
+        ))}
+      </div>
+    </HomeLayout>
   )
 }
 
