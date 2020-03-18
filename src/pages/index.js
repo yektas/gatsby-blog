@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
+import { MDXProvider } from "@mdx-js/react"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import HomeLayout from "../components/home-layout"

@@ -51,6 +51,14 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              maintainCase: false,
+              removeAccents: false,
+              isIconAfterHeader: false,
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               showLineNumbers: true,

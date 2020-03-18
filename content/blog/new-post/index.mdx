@@ -4,6 +4,16 @@ date: "2019-10-22"
 description: "Full page markdown example"
 ---
 
+## Heading 1
+
+### Heading 2
+
+### Heading 3
+
+## Heading 4
+
+#### Heading 4
+
 Docker ile çalışan uygulamalarınızı bir sunucudan başka bir sunucuya taşımak istediğiniz zaman kullanabileceğiniz iki tane yöntem vardır. Bunlardan ilki save ikincisi ise **export** methodudur.
 
 **Save** methodu, o an çalışmayan bir image’i bir dosyaya kaydeder. Export methodu ise, çalışmakta veya durdurulmuş bir container instance’ını bir dosyaya kaydeder. Bu yazımızda `export` methodu ile çalışan bir container’ı başka bir sunucuya taşıma işleminin nasıl yapıldığını bulabilirsiniz.
@@ -41,7 +51,7 @@ Yapacağımız en son işlem ise container’ı ayağa kaldırmak olacak. Bunu d
 docker run -i -t NAME /bin/bash
 ```
 
-Burada normal Docker run komutu çalıştırıyoruz. Eklemek istediğiniz parametreler varsa burada ekleyebilirsiniz. Dikkat edilmesi gereken konu ise çalıştıracağımız komut. Yukarıda */bin/bash* yazan yere bu uygulamayı çalıştırmak için kullandığınız (Dockerfile içerisindeki) komutu yazıyoruz. Bizim örneğimizde aşağıdaki gibi oluyor. Port açmak istediğimiz için -p parametresini, arka planda çalıştırmak istediğimiz için -d parametresini kullanıyoruz. Locust uygulaması ayağa kalkarken test etmek istediğiniz host’u da vermeniz gerektiği için bu parametreyi de ekliyoruz.
+Burada normal Docker run komutu çalıştırıyoruz. Eklemek istediğiniz parametreler varsa burada ekleyebilirsiniz. Dikkat edilmesi gereken konu ise çalıştıracağımız komut. Yukarıda _/bin/bash_ yazan yere bu uygulamayı çalıştırmak için kullandığınız (Dockerfile içerisindeki) komutu yazıyoruz. Bizim örneğimizde aşağıdaki gibi oluyor. Port açmak istediğimiz için -p parametresini, arka planda çalıştırmak istediğimiz için -d parametresini kullanıyoruz. Locust uygulaması ayağa kalkarken test etmek istediğiniz host’u da vermeniz gerektiği için bu parametreyi de ekliyoruz.
 
 ```bash
 ## örnek bir komut
