@@ -24,7 +24,7 @@ const HomeLayout = ({ children, rightMenu, rightMenuSticky }) => {
           <div className="grid col-gap-20 pt-10 mobile:px-6 mobile:grid-cols-2 sm:grid-cols-3">
             <MainColumn>{children}</MainColumn>
             <RightColumn>
-              <div className={rightMenuSticky && "sticky top-20"}>
+              <div className={rightMenuSticky ? "sticky top-20" : ""}>
                 <SectionTitle>Popular Tags</SectionTitle>
                 <div className="mt-5 mb-20">
                   <PopularTags />
@@ -33,13 +33,13 @@ const HomeLayout = ({ children, rightMenu, rightMenuSticky }) => {
                 <SectionTitle>Popular Posts</SectionTitle>
                 <div className="mt-5">
                   <ul>
-                    <Link>
+                    <Link to="/">
                       <li>-> Docker import export komutu kullanımı</li>
                     </Link>
-                    <Link>
+                    <Link to="/">
                       <li>-> How to be a python expert</li>
                     </Link>
-                    <Link>
+                    <Link to="/">
                       <li>-> Writing Dockerfiles like a pro!</li>
                     </Link>
                   </ul>

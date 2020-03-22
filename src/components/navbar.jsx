@@ -8,8 +8,8 @@ const Navbar = () => {
 
   return (
     <div className="w-full shadow-md top-0 z-20">
-      <header class="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2 max-w-screen-xl mx-auto">
-        <div class="flex-1 flex justify-between items-center">
+      <header className="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2 max-w-screen-xl mx-auto">
+        <div className="flex-1 flex justify-between items-center">
           <Link to="/">
             <img
               className="h-10 m-0"
@@ -46,7 +46,7 @@ const Navbar = () => {
             <div
               className={!isMenuOpen ? "hidden " + linkClasses : linkClasses}
             >
-              <ul class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0">
+              <ul className="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0">
                 <li className="lg:p-4 py-3 px-0 block m-0">
                   <Link to="/">Latest Posts</Link>
                 </li>

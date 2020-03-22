@@ -21,7 +21,7 @@ const PopularTags = () => {
   return (
     <>
       {tagList.map(obj => (
-        <Link to={`/tags/${obj.tag}`}>
+        <Link key={obj.tag} to={`/tags/${obj.tag}`}>
           <Badge>{obj.tag}</Badge>
         </Link>
       ))}

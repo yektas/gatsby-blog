@@ -9,7 +9,10 @@ const ToC = ({ headings }) => {
     let result = []
     headings.map(heading => {
       result.push(
-        <div className="transition duration-300 ease-in-out transform hover:translate-x-2">
+        <div
+          key={heading.url}
+          className="transition duration-300 ease-in-out transform hover:translate-x-2"
+        >
           <a href={heading.url} key={heading.url} className={headerClasses}>
             {heading.title}
           </a>
@@ -18,7 +21,10 @@ const ToC = ({ headings }) => {
       if (heading.hasOwnProperty("items")) {
         heading.items.map(subHeading => {
           result.push(
-            <div className="transition duration-300 ease-in-out transform hover:translate-x-2">
+            <div
+              key={heading.url}
+              className="transition duration-300 ease-in-out transform hover:translate-x-2"
+            >
               <a
                 href={subHeading.url}
                 key={subHeading.url}

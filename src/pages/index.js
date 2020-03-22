@@ -8,26 +8,14 @@ const BlogIndex = ({ data, location }) => {
   //const siteTitle = data.site.siteMetadata.title
   const posts = data.allMdx.edges
 
-  const rightMenu = () => {
-    return (
-      <ul>
-        <li>DENEME</li>
-        <li>DENEME1</li>
-        <li>DENEME2</li>
-        <li>DENEME3</li>
-        <li>DENEME4</li>
-      </ul>
-    )
-  }
-
   return (
-    <HomeLayout rightMenu={rightMenu()} rightMenuSticky={false}>
+    <HomeLayout rightMenuSticky={false}>
       {/* <SEO title="All posts" /> */}
       {/* <Bio /> */}
       <SectionTitle>Latest Posts</SectionTitle>
       <div className="mt-5">
         {posts.map(({ node }) => (
-          <PostCard node={node} />
+          <PostCard key={node.fields.slug} node={node} />
         ))}
       </div>
     </HomeLayout>

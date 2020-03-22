@@ -1,7 +1,6 @@
 import React from "react"
 import Navbar from "./navbar"
 import "../css/global.css"
-import PostLayout from "./post-layout"
 import Footer from "./footer"
 
 const Layout = ({ location, title, children }) => {
@@ -9,9 +8,7 @@ const Layout = ({ location, title, children }) => {
     <div>
       <Navbar />
       <div className="w-full max-w-screen-xl mx-auto">
-        <main>
-          <PostLayout>{children}</PostLayout>
-        </main>
+        <main></main>
         <Footer />
       </div>
     </div>

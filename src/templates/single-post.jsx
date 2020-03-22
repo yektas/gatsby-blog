@@ -2,13 +2,13 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
-import { H1, H2, H3, H4, H5, P } from "./common/page-elements"
-import Badge from "./common/badge"
+import { H1, H2, H3, H4, H5, P } from "../components/common/page-elements"
+import Badge from "../components/common/badge"
 
 import Bio from "../components/bio"
-import Navbar from "./navbar"
+import Navbar from "../components/navbar"
 import SEO from "../components/seo"
-import ToC from "./table-of-contents"
+import ToC from "../components/table-of-contents"
 import { rhythm, scale } from "../utils/typography"
 
 const components = {
@@ -21,7 +21,7 @@ const components = {
   Badge,
 }
 
-const PostLayout = ({ data, pageContext, location }) => {
+const SinglePost = ({ data, pageContext, location }) => {
   const post = data.mdx
   //const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
@@ -35,18 +35,18 @@ const PostLayout = ({ data, pageContext, location }) => {
           description={post.frontmatter.description || post.excerpt}
         />
         <main>
-          <div class="lg:flex justify-end sm:ml-32 md:m-0 lg:m-0">
+          <div className="lg:flex justify-end sm:ml-32 md:m-0 lg:m-0">
             <div
               id="content-wrapper"
-              class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible"
+              className="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible"
             >
               <div id="content">
-                <div id="app" class="flex">
-                  <div class="pt-3 pb-16 sm:mt-24 md:mt-0 w-full">
-                    <div class="flex">
+                <div id="app" className="flex">
+                  <div className="pt-3 pb-16 sm:mt-24 md:mt-0 w-full">
+                    <div className="flex">
                       <div
                         id="markdown"
-                        class="markdown px-6 xl:px-12 w-full max-w-3xl mx-auto lg:mr-auto"
+                        className="markdown px-6 xl:px-12 w-full max-w-3xl mx-auto lg:mr-auto"
                       >
                         <article>
                           <header>
@@ -80,8 +80,8 @@ const PostLayout = ({ data, pageContext, location }) => {
                         </article>
                       </div>
 
-                      <div class="hidden xl:text-sm xl:block xl:w-1/4 xl:px-6">
-                        <div class="top-16 flex flex-col justify-between overflow-y-auto sticky  max-h-(screen-16) pt-12 pb-4 -mt-12">
+                      <div className="hidden xl:text-sm xl:block xl:w-1/4 xl:px-6">
+                        <div className="top-16 flex flex-col justify-between overflow-y-auto sticky  max-h-(screen-16) pt-12 pb-4 -mt-12">
                           <ToC headings={post.tableOfContents.items} />
                         </div>
                       </div>
@@ -123,7 +123,7 @@ const PostLayout = ({ data, pageContext, location }) => {
   )
 }
 
-export default PostLayout
+export default SinglePost
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {

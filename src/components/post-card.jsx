@@ -6,11 +6,11 @@ import { rhythm } from "../utils/typography"
 const PostCard = ({ node }) => {
   const title = node.frontmatter.title || node.fields.slug
   return (
-    <div class="shadow-lg mb-10 p-5">
+    <div key={node.fields.slug} className="shadow-lg mb-10 p-5">
       <article key={node.fields.slug}>
         <header>
           <h3
-            class="text-2xl"
+            className="text-2xl"
             style={{
               marginBottom: rhythm(1 / 4),
             }}
@@ -19,7 +19,7 @@ const PostCard = ({ node }) => {
               {title}
             </Link>
           </h3>
-          <small class="text-gray-600">{node.frontmatter.date}</small>
+          <small className="text-gray-600">{node.frontmatter.date}</small>
         </header>
         <section>
           <p
