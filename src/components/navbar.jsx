@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import Headroom from "react-headroom"
 import { Link } from "gatsby"
 
 const Navbar = () => {

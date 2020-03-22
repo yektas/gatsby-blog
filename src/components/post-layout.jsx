@@ -3,13 +3,13 @@ import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 import { H1, H2, H3, H4, H5, P } from "./common/page-elements"
+import Badge from "./common/badge"
 
 import Bio from "../components/bio"
 import Navbar from "./navbar"
 import SEO from "../components/seo"
 import ToC from "./table-of-contents"
 import { rhythm, scale } from "../utils/typography"
-import Headroom from "react-headroom"
 
 const components = {
   h1: props => <H1 {...props} />,
@@ -18,11 +18,12 @@ const components = {
   h4: props => <H4 {...props} />,
   h5: props => <H5 {...props} />,
   p: props => <P {...props} />,
+  Badge,
 }
 
 const PostLayout = ({ data, pageContext, location }) => {
   const post = data.mdx
-  const siteTitle = data.site.siteMetadata.title
+  //const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
   return (

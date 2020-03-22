@@ -1,16 +1,11 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import { MDXProvider } from "@mdx-js/react"
-import Bio from "../components/bio"
-import Layout from "../components/layout"
+import { graphql } from "gatsby"
 import HomeLayout from "../components/home-layout"
 import PostCard from "../components/post-card"
 import SectionTitle from "../components/common/section-title"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+  //const siteTitle = data.site.siteMetadata.title
   const posts = data.allMdx.edges
 
   const rightMenu = () => {
@@ -34,12 +29,6 @@ const BlogIndex = ({ data, location }) => {
         {posts.map(({ node }) => (
           <PostCard node={node} />
         ))}
-        {posts.map(({ node }) => (
-          <PostCard node={node} />
-        ))}
-        {posts.map(({ node }) => (
-          <PostCard node={node} />
-        ))}
       </div>
     </HomeLayout>
   )
@@ -54,7 +43,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(
+      filter: { frontmatter: { published: { eq: true } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           excerpt

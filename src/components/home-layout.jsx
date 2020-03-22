@@ -5,7 +5,7 @@ import Footer from "./footer"
 import styled from "styled-components"
 import tw from "twin.macro"
 import SectionTitle from "./common/section-title"
-import Badge from "./common/badge"
+import PopularTags from "./popular-tags"
 
 const MainColumn = styled.div`
   ${tw`mobile:col-span-3 sm:col-span-2`}
@@ -25,23 +25,9 @@ const HomeLayout = ({ children, rightMenu, rightMenuSticky }) => {
             <MainColumn>{children}</MainColumn>
             <RightColumn>
               <div className={rightMenuSticky && "sticky top-20"}>
-                <SectionTitle>Top Categories</SectionTitle>
+                <SectionTitle>Popular Tags</SectionTitle>
                 <div className="mt-5 mb-20">
-                  <Link to="/2nd-post">
-                    <Badge>React</Badge>
-                  </Link>
-                  <Link to="/2nd-post">
-                    <Badge>React</Badge>
-                  </Link>
-                  <Link to="/2nd-post">
-                    <Badge>React</Badge>
-                  </Link>
-                  <Link to="/2nd-post">
-                    <Badge>React</Badge>
-                  </Link>
-                  <Link to="/2nd-post">
-                    <Badge>React</Badge>
-                  </Link>
+                  <PopularTags />
                 </div>
 
                 <SectionTitle>Popular Posts</SectionTitle>

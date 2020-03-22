@@ -1,6 +1,5 @@
 import React from "react"
 import Navbar from "./navbar"
-import { rhythm } from "../utils/typography"
 import "../css/global.css"
 import PostLayout from "./post-layout"
 import Footer from "./footer"
