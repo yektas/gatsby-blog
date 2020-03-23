@@ -11,7 +11,6 @@ const BlogIndex = ({ data, location }) => {
   return (
     <HomeLayout rightMenuSticky={false}>
       {/* <SEO title="All posts" /> */}
-      {/* <Bio /> */}
       <SectionTitle>Latest Posts</SectionTitle>
       <div className="mt-5">
         {posts.map(({ node }) => (
@@ -45,6 +44,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+          }
+          thumbnail {
+            childImageSharp {
+              fluid(maxWidth: 600, maxHeight: 300, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }

@@ -7,6 +7,9 @@ module.exports = {
       screens: {
         mobile: { max: "767px" },
       },
+      scale: {
+        "101": "1.01",
+      },
     },
     inset: {
       "16": "4rem",

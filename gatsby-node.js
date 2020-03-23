@@ -1,7 +1,10 @@
 const path = require(`path`)
 const _ = require(`lodash`)
 
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const {
+  createFilePath,
+  createRemoteFileNode,
+} = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -73,10 +76,41 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  createTypes(`
+    type Mdx implements Node {
+      frontmatter: Frontmatter
+    }
+    type Frontmatter {
+      thumbnail: String
+    }
+  `)
+}
 
+exports.onCreateNode = async ({
+  node,
+  actions: { createNode, createNodeField },
+  getNode,
+  store,
+  cache,
+  createNodeId,
+}) => {
   if (node.internal.type === `Mdx`) {
+    if (node.frontmatter.thumbnail !== null) {
+      let fileNode = await createRemoteFileNode({
+        url: node.frontmatter.thumbnail,
+        parentNodeId: node.id,
+        createNode,
+        createNodeId,
+        cache,
+        store,
+      })
+      if (fileNode) {
+        node.thumbnail___NODE = fileNode.id
+      }
+    }
+
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,

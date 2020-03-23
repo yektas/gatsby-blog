@@ -5,7 +5,6 @@ import { MDXProvider } from "@mdx-js/react"
 import { H1, H2, H3, H4, H5, P } from "../components/common/page-elements"
 import Badge from "../components/common/badge"
 
-import Bio from "../components/bio"
 import Navbar from "../components/navbar"
 import SEO from "../components/seo"
 import ToC from "../components/table-of-contents"
@@ -74,9 +73,6 @@ const SinglePost = ({ data, pageContext, location }) => {
                               marginBottom: rhythm(1),
                             }}
                           />
-                          <footer>
-                            <Bio />
-                          </footer>
                         </article>
                       </div>
 
