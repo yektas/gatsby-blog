@@ -11,7 +11,7 @@ module.exports = {
         mobile: { max: "767px" },
       },
       fontSize: {
-        "xxs": ".65rem"
+        "xxs": ".6rem"
       },
       scale: {
         "101": "1.01",
