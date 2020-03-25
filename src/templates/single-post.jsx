@@ -7,6 +7,7 @@ import Badge from "../components/common/badge"
 
 import Navbar from "../components/navbar"
 import SEO from "../components/seo"
+import Footer from "../components/footer"
 import ToC from "../components/table-of-contents"
 import { rhythm, scale } from "../utils/typography"
 
@@ -115,6 +116,7 @@ const SinglePost = ({ data, pageContext, location }) => {
           </ul>
         </nav>
       </div>
+      <Footer />
     </MDXProvider>
   )
 }

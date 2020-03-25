@@ -2,10 +2,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "radical-red": "#f73859",
+        "radical-red": "#f73859"
+      },
+      backgroundColor: {
+        "whitesmoke": "whitesmoke"
       },
       screens: {
         mobile: { max: "767px" },
+      },
+      fontSize: {
+        "xxs": ".65rem"
       },
       scale: {
         "101": "1.01",

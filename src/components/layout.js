@@ -9,8 +9,8 @@ const Layout = ({ location, title, children }) => {
       <Navbar />
       <div className="w-full max-w-screen-xl mx-auto">
         <main></main>
-        <Footer />
       </div>
+      <Footer />
     </div>
   )
 }

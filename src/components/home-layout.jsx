@@ -48,8 +48,8 @@ const HomeLayout = ({ children, rightMenu, rightMenuSticky }) => {
             </RightColumn>
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </>
   )
 }
