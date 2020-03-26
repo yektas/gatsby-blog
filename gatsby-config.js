@@ -3,15 +3,23 @@ module.exports = {
     title: `Sercan's coding blog`,
     author: {
       name: `Sercan Yektas`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      summary: `who lives and works in Istanbul building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `My coding blog for sharing various posts about software development related topics`,
+    siteUrl: `https://sercanyektas.com/`,
     social: {
       twitter: `syektas`,
+      github: `yektas`,
+      linkedIn: `sercanyektas`
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-161986031-1",
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -73,12 +81,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     "gatsby-plugin-postcss",
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
     `gatsby-plugin-feed-mdx`,
     {
       resolve: `gatsby-plugin-manifest`,

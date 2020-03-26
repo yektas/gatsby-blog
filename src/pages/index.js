@@ -2,15 +2,16 @@ import React from "react"
 import { graphql } from "gatsby"
 import HomeLayout from "../components/home-layout"
 import PostCard from "../components/post-card"
+import SEO from "../components/seo"
 import SectionTitle from "../components/common/section-title"
 
 const BlogIndex = ({ data, location }) => {
-  //const siteTitle = data.site.siteMetadata.title
+  const siteTitle = data.site.siteMetadata.title
   const posts = data.allMdx.edges
 
   return (
     <HomeLayout rightMenuSticky={false}>
-      {/* <SEO title="All posts" /> */}
+      <SEO title={siteTitle} />
       <SectionTitle>Latest Posts</SectionTitle>
       <div className="mt-5">
         {posts.map(({ node }) => (
