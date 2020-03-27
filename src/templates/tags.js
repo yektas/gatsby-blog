@@ -1,32 +1,33 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import HomeLayout from "../components/home-layout"
+import capitalize from "lodash/capitalize"
+import TwoColumnLayout from "../components/two-column-layout"
+import SectionTitle from "../components/common/section-title"
+import PostCard from "../components/post-card"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
-  const { edges, totalCount } = data.allMdx
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
+  const { totalCount } = data.allMdx
+  const posts = data.allMdx.edges
   return (
-    <div>
-      <h1>{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const { slug } = node.fields
-          const { title } = node.frontmatter
-          return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
-          )
-        })}
-      </ul>
+    <TwoColumnLayout>
+      <div className="pb-8">
+        <SectionTitle uppercase={false} size="2xl">
+          {capitalize(tag)}
+        </SectionTitle>
+      </div>
+      <div>
+        <h3 className="float-right">{totalCount} posts</h3>
+      </div>
+      {posts.map(({ node }) => (
+        <PostCard key={node.fields.slug} node={node} />
+      ))}
       {/*
               This links to a page that does not yet exist.
               You'll come back to it!
             */}
-      <Link to="/tags">All tags</Link>
-    </div>
+    </TwoColumnLayout>
   )
 }
 
@@ -42,11 +43,21 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
+          excerpt
           fields {
             slug
           }
           frontmatter {
+            date(formatString: "MMMM DD, YYYY")
             title
+            description
+          }
+          thumbnail {
+            childImageSharp {
+              fluid(maxWidth: 600, maxHeight: 300, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }

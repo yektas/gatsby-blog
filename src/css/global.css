@@ -22,24 +22,8 @@ html {
 
 body {
   @apply leading-normal;
-}
+ }
 
 article > header > h3 {
   @apply text-blue-600 font-medium;
 }
-
-/* article > h1 > a.anchor.before,
-article > h2 > a.anchor.before,
-article > h3 > a.anchor.before,
-article > h4 > a.anchor.before,
-article > h5 > a.anchor.before {
-  @apply opacity-100 inline-block mr-1;
-} */
-
-/* article > h1:hover,
-article > h2:hover,
-article > h3:hover,
-article > h4:hover,
-article > h5:hover {
-  @apply opacity-100;
-} */

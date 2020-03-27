@@ -12,7 +12,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <HomeLayout rightMenuSticky={false}>
       <SEO title={siteTitle} />
-      <SectionTitle>Latest Posts</SectionTitle>
+      <SectionTitle size="xl">Latest Posts</SectionTitle>
       <div className="mt-5">
         {posts.map(({ node }) => (
           <PostCard key={node.fields.slug} node={node} />

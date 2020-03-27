@@ -46,7 +46,7 @@ const SinglePost = ({ data, pageContext, location }) => {
                     <div className="flex">
                       <div
                         id="markdown"
-                        className="markdown px-6 xl:px-12 w-full max-w-3xl mx-auto lg:mr-auto"
+                        className="markdown px-6 xl:px-12 w-full max-w-3xl mx-auto lg:mr-auto bg-white shadow-sm"
                       >
                         <article>
                           <header>

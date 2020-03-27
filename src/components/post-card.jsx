@@ -9,7 +9,7 @@ const PostCard = ({ node }) => {
   return (
     <div
       key={node.fields.slug}
-      className="shadow-lg mb-10 rounded-lg transition duration-300 transform hover:scale-101"
+      className="shadow-lg mb-10 bg-white rounded-lg transition duration-300 transform hover:scale-101"
     >
       <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
         <Img

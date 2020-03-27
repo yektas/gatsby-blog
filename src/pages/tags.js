@@ -1,7 +1,10 @@
 import React from "react"
-import kebabCase from "lodash/kebabCase"
+import capitalize from "lodash/capitalize"
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
+import HomeLayout from "../components/home-layout"
+import SectionTitle from "../components/common/section-title"
+
 const TagsPage = ({
   data: {
     allMdx: { group },
@@ -9,23 +12,35 @@ const TagsPage = ({
       siteMetadata: { title },
     },
   },
-}) => (
-  <div>
-    <Helmet title={title} />
-    <div>
-      <h1>Tags</h1>
-      <ul>
-        {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-              {tag.fieldValue} ({tag.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
-)
+}) => {
+  const tagList = group
+  tagList.sort(function(a, b) {
+    return b.totalCount - a.totalCount
+  })
+
+  return (
+    <HomeLayout>
+      <Helmet title={title} />
+      <div>
+        <SectionTitle size="xl">Tags</SectionTitle>
+        <div className="mt-4">
+          <ul>
+            {tagList.map(tag => (
+              <li
+                className="text-blue-500 hover:text-blue-400"
+                key={tag.fieldValue}
+              >
+                <Link to={`/tags/${capitalize(tag.fieldValue)}/`}>
+                  <strong>{tag.fieldValue}</strong> ({tag.totalCount})
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </HomeLayout>
+  )
+}
 
 export default TagsPage
 

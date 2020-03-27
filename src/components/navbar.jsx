@@ -7,7 +7,7 @@ const Navbar = () => {
   const linkClasses = "lg:flex lg:items-center lg:w-auto w-full"
 
   return (
-    <div className="w-full shadow-md top-0 z-20">
+    <div className="w-full shadow-md top-0 z-20 bg-white">
       <header className="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2 max-w-screen-xl mx-auto">
         <div className="flex-1 flex justify-between items-center">
           <Link to="/">
@@ -51,7 +51,7 @@ const Navbar = () => {
                   <Link to="/">Latest Posts</Link>
                 </li>
                 <li className="lg:p-4 py-3 px-0 block m-0">
-                  <Link to="/">Tutorials</Link>
+                  <Link to="/tags">Topics</Link>
                 </li>
                 <li className="lg:p-4 py-3 px-0 block m-0">
                   <Link to="/">Newsletter</Link>
