@@ -1,5 +1,6 @@
 import React from "react"
 import capitalize from "lodash/capitalize"
+import kebabCase from "lodash/kebabCase"
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 import HomeLayout from "../components/home-layout"
@@ -30,8 +31,9 @@ const TagsPage = ({
                 className="text-blue-500 hover:text-blue-400"
                 key={tag.fieldValue}
               >
-                <Link to={`/tags/${capitalize(tag.fieldValue)}/`}>
-                  <strong>{tag.fieldValue}</strong> ({tag.totalCount})
+                <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                  <strong>{capitalize(tag.fieldValue)}</strong> (
+                  {tag.totalCount})
                 </Link>
               </li>
             ))}
