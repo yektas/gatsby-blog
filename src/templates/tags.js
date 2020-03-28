@@ -1,9 +1,9 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import HomeLayout from "../components/home-layout"
+import { graphql } from "gatsby"
 import capitalize from "lodash/capitalize"
 import TwoColumnLayout from "../components/two-column-layout"
 import SectionTitle from "../components/common/section-title"
+import SEO from "../components/seo"
 import PostCard from "../components/post-card"
 import Footer from "../components/footer"
 import Navbar from "../components/navbar"
@@ -20,7 +20,7 @@ const tagHeader = (tag, count) => {
   )
 }
 
-const Tags = ({ pageContext, data }) => {
+const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext
   const { totalCount } = data.allMdx
   const posts = data.allMdx.edges
@@ -28,14 +28,15 @@ const Tags = ({ pageContext, data }) => {
   return (
     <>
       <Navbar />
+      <SEO
+        title={capitalize(tag)}
+        type="website"
+        pathName={location.pathname}
+      />
       <TwoColumnLayout header={tagHeader(tag, totalCount)}>
         {posts.map(({ node }) => (
           <PostCard key={node.fields.slug} node={node} />
         ))}
-        {/*
-              This links to a page that does not yet exist.
-              You'll come back to it!
-            */}
       </TwoColumnLayout>
       <Footer />
     </>

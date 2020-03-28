@@ -23,16 +23,20 @@ const components = {
 
 const SinglePost = ({ data, pageContext, location }) => {
   const post = data.mdx
-  //const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
-
   return (
     <MDXProvider components={components}>
       <Navbar />
       <div className="w-full max-w-screen-xl mx-auto sm:pl-0 md:pl-0 lg:pl-0 xl:pl-40">
         <SEO
+          pathName={location.pathname}
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
+          image={post.thumbnail.childImageSharp.fluid.src}
+          imageAlt={post.frontmatter.thumbnailAlt}
+          date={post.frontmatter.utcDate}
+          tags={post.frontmatter.tags}
+          updatedDate={post.frontmatter.utcUpdatedDate}
         />
         <main>
           <div className="lg:flex justify-end sm:ml-32 md:m-0 lg:m-0">
@@ -136,8 +140,20 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
+        tags
         date(formatString: "MMMM DD, YYYY")
+        utcDate: date(formatString: "YYYY-MM-DDTHH:mm:ssZ")
+        updatedDate(formatString: "MMMM DD, YYYY")
+        utcUpdatedDate: updatedDate(formatString: "YYYY-MM-DDTHH:mm:ssZ")
+        thumbnailAlt
         description
+      }
+      thumbnail {
+        childImageSharp {
+          fluid(maxWidth: 600, maxHeight: 300, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
       }
       tableOfContents
       timeToRead

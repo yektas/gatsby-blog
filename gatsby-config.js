@@ -6,18 +6,22 @@ module.exports = {
       summary: `who lives and works in Istanbul building useful things.`,
     },
     description: `My coding blog for sharing various posts about software development related topics`,
-    siteUrl: `https://sercanyektas.com/`,
+    siteUrl: `https://sercanyektas.com`,
+    siteName: `sercanyektas`,
+    siteIconAlt: `SY Logo`,
+    keywords: ["coding", "programming", "software", "development", "blog"],
     social: {
       twitter: `syektas`,
+      twitterId: `385002308`,
       github: `yektas`,
-      linkedIn: `sercanyektas`
+      linkedIn: `sercanyektas`,
     },
   },
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || '',
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || "",
       },
     },
     {
@@ -91,7 +95,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/black.png`,
       },
     },
     `gatsby-plugin-react-helmet`,

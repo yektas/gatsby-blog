@@ -1,8 +1,4 @@
 import React from "react"
-import Navbar from "./navbar"
-import Footer from "./footer"
-import capitalize from "lodash/capitalize"
-import SectionTitle from "../components/common/section-title"
 
 const TwoColumnLayout = ({ header, children }) => {
   return (

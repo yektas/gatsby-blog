@@ -1,17 +1,23 @@
 import React from "react"
 import { graphql } from "gatsby"
+import "../css/global.css"
 import HomeLayout from "../components/home-layout"
 import PostCard from "../components/post-card"
 import SEO from "../components/seo"
 import SectionTitle from "../components/common/section-title"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+  const { description } = data.site.siteMetadata
   const posts = data.allMdx.edges
 
   return (
     <HomeLayout rightMenuSticky={false}>
-      <SEO title={siteTitle} />
+      <SEO
+        type="website"
+        title=""
+        description={description}
+        pathName={location.pathname}
+      />
       <SectionTitle size="xl">Latest Posts</SectionTitle>
       <div className="mt-5">
         {posts.map(({ node }) => (
@@ -29,6 +35,8 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
+        siteUrl
       }
     }
     allMdx(

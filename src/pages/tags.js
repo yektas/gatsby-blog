@@ -1,10 +1,10 @@
 import React from "react"
 import capitalize from "lodash/capitalize"
 import kebabCase from "lodash/kebabCase"
-import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 import HomeLayout from "../components/home-layout"
 import SectionTitle from "../components/common/section-title"
+import SEO from "../components/seo"
 
 const TagsPage = ({
   data: {
@@ -13,6 +13,7 @@ const TagsPage = ({
       siteMetadata: { title },
     },
   },
+  location,
 }) => {
   const tagList = group
   tagList.sort(function(a, b) {
@@ -21,7 +22,7 @@ const TagsPage = ({
 
   return (
     <HomeLayout>
-      <Helmet title={title} />
+      <SEO title="All tags" type="website" pathName={location.pathname} />
       <div>
         <SectionTitle size="xl">Tags</SectionTitle>
         <div className="mt-4">
