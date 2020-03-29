@@ -51,7 +51,7 @@ const Navbar = () => {
                   <Link to="/">Latest Posts</Link>
                 </li>
                 <li className="lg:p-4 py-3 px-0 block m-0">
-                  <Link to="/tags">Topics</Link>
+                  <Link to="/tags">Tags</Link>
                 </li>
                 <li className="lg:p-4 py-3 px-0 block m-0">
                   <Link to="/">Newsletter</Link>

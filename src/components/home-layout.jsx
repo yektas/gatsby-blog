@@ -36,15 +36,17 @@ const HomeLayout = ({ children, showRightColumn, rightColumnSticky }) => {
                 <SectionTitle>Popular Posts</SectionTitle>
                 <div className="mt-5">
                   <ul>
-                    <Link to="/">
-                      <li>-> Docker import export komutu kullanımı</li>
-                    </Link>
-                    <Link to="/">
-                      <li>-> How to be a python expert</li>
-                    </Link>
-                    <Link to="/">
-                      <li>-> Writing Dockerfiles like a pro!</li>
-                    </Link>
+                    <li>
+                      <Link to="/">
+                        -> Docker import export komutu kullanımı
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/">-> How to be a python expert</Link>
+                    </li>
+                    <li>
+                      <Link to="/">-> Writing Dockerfiles like a pro!</Link>
+                    </li>
                   </ul>
                 </div>
               </div>
