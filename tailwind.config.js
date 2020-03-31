@@ -2,16 +2,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "radical-red": "#f73859"
+        "radical-red": "#f73859",
+        "living-coral": "#ff6f61",
       },
       backgroundColor: {
-        "whitesmoke": "whitesmoke"
+        whitesmoke: "whitesmoke",
       },
       screens: {
         mobile: { max: "767px" },
       },
       fontSize: {
-        "xxs": ".6rem"
+        xxs: ".6rem",
       },
       scale: {
         "101": "1.01",

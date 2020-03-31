@@ -4,14 +4,14 @@ import PropTypes from "prop-types"
 import tw from "twin.macro"
 
 const Title = styled.h3`
-  ${tw`text-radical-red font-bold`}
+  ${tw`text-living-coral font-bold`}
   ${props => props.uppercase && tw`uppercase`}
   ${props => props.inline && tw`inline`}
   ${props => props.size === "sm" && tw`text-sm`}
   ${props => props.size === "lg" && tw`text-lg`}
   ${props => props.size === "xl" && tw`text-xl`}
   ${props => props.size === "2xl" && tw`text-2xl`}
-`
+  `
 
 const SectionTitle = ({ inline, size, children }) => {
   return (

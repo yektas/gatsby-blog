@@ -22,8 +22,8 @@ html {
 
 body {
   @apply leading-normal;
- }
+}
 
 article > header > h3 {
-  @apply text-blue-600 font-medium;
+  @apply text-indigo-600 font-bold;
 }
