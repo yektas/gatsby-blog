@@ -26,10 +26,7 @@ const Footer = () => {
   )
 
   return (
-    <footer
-      style={{ bottom: 0 }}
-      className="flex flex-col items-center bg-whitesmoke p-10  w-full"
-    >
+    <footer className="flex flex-col items-center bg-whitesmoke p-10  w-full">
       <div className="mobile:text-xxs sm:text-xs mb-4">
         <img className="inline m-0 w-4" src={codeIcon} alt="Code Icon" /> with{" "}
         <img className="inline m-0 mr-1 w-4" src={heartIcon} alt="Heart Icon" />
