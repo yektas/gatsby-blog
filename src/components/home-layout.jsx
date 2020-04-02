@@ -97,6 +97,7 @@ HomeLayout.propTypes = {
 
 HomeLayout.defaultProps = {
   showRightColumn: true,
+  popularPosts: [],
 }
 
 export default HomeLayout
