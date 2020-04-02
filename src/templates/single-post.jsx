@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import { Disqus, CommentCount } from "gatsby-plugin-disqus"
 import { MDXProvider } from "@mdx-js/react"
 import { H1, H2, H3, H4, H5, P } from "../components/common/page-elements"
 import Badge from "../components/common/badge"
@@ -23,6 +24,11 @@ const components = {
 
 const SinglePost = ({ data, pageContext, location }) => {
   const post = data.mdx
+  let disqusConfig = {
+    url: `${data.site.siteMetadata.siteUrl}${location.pathname}`,
+    identifier: post.id,
+    title: post.frontmatter.title,
+  }
   const { previous, next } = pageContext
   return (
     <MDXProvider components={components}>
@@ -92,6 +98,8 @@ const SinglePost = ({ data, pageContext, location }) => {
               </div>
             </div>
           </div>
+
+          <Disqus config={disqusConfig} />
         </main>
         <nav>
           <ul
@@ -120,6 +128,7 @@ const SinglePost = ({ data, pageContext, location }) => {
           </ul>
         </nav>
       </div>
+
       <Footer />
     </MDXProvider>
   )
@@ -132,6 +141,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     mdx(fields: { slug: { eq: $slug } }) {

@@ -34,6 +34,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/content/data`,
+        name: `data`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
       },
@@ -82,6 +89,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-json`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     "gatsby-plugin-postcss",
@@ -97,6 +105,12 @@ module.exports = {
         display: `minimal-ui`,
         icon: `content/assets/black.png`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `sercanyektas`
+      }
     },
     `gatsby-plugin-react-helmet`,
     {

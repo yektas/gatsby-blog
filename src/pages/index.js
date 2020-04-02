@@ -9,9 +9,14 @@ import SectionTitle from "../components/common/section-title"
 const BlogIndex = ({ data, location }) => {
   const { description } = data.site.siteMetadata
   const posts = data.allMdx.edges
+  const popularPosts = data.popularPosts.edges
 
   return (
-    <HomeLayout rightMenuSticky={false}>
+    <HomeLayout
+      rightMenuSticky={false}
+      popularPosts={popularPosts}
+      allPosts={posts}
+    >
       <SEO
         type="website"
         title=""
@@ -61,6 +66,15 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+    popularPosts: allPopularPostsJson {
+      edges {
+        node {
+          id
+          rank
+          slug
         }
       }
     }
